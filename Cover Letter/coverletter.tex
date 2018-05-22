@@ -1,0 +1,114 @@
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{awesome-cv}
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-red}
+% Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+\photo[circle,noedge,left]{profile}
+\name{Sharon T.}{Olorunniwo}
+\position{Computer Science Student}
+\address{Dublin, Ireland}
+
+\mobile{(+353) 89-940-1194}
+\email{olorunns@tcd.ie}
+\homepage{http://sharon-olorunns.github.io}
+\github{sharon-olorunns}
+\linkedin{sharon-olorunniwo}
+
+\quote{``Opportunity is missed by most people because it is dressed in overalls and looks like work." – Thomas Edison}
+
+
+%-------------------------------------------------------------------------------
+%	LETTER INFORMATION
+%	All of the below lines must be filled out
+%-------------------------------------------------------------------------------
+% The company being applied to
+\recipient
+  {Mylan N.V. Recruitment Team}
+  {Dublin, Ireland}
+% The date on the letter, default is the date of compilation
+\letterdate{\today}
+% The title of the letter
+\lettertitle{Job Application for Summer Internship}
+% How the letter is opened
+\letteropening{Dear Mr./Ms,}
+% How the letter is closed
+\letterclosing{Sincerely,}
+% Any enclosures with the letter
+\letterenclosure[Attached]{Curriculum Vitae}
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader[R]
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {\today}
+  {Sharon T. Olorunniwo~~~·~~~Cover Letter}
+  {}
+
+% Print the title with above letter informations
+\makelettertitle
+
+%-------------------------------------------------------------------------------
+%	LETTER CONTENT
+%-------------------------------------------------------------------------------
+\begin{cvletter}
+
+\lettersection{About Me}
+My name is Sharon and I will be a Junior Sophister Computer Science student this coming Fall at Trinity College Dublin. I am a student offering a strong foundation in object-oriented programming, problem-solving and programming principles. I am eager to learn and can adapt to new technologies. I pride myself in being able to work in both team and self-directed settings. I have applied for this internship for two reasons, to continue to develop my skills as a programmer in a professional setting and to gain a practical insight into the industry. When I am not studying or coding I enjoy watching films, playing the guitar, reading up on interesting topics and being active.
+
+\lettersection{My Experience?}
+Last summer I spent 3 months interning at Intel as a product development engineer, so I have experience working for a large technology company. During my time there I completed two projects using Intel designed motherboards. For the first project we were given the freedom to do whatever we wanted with an Intel Geniuno board. I created a light-sensored controlled animation. In short, I wrote both Arduino code and Java code to work simultaneously to control the different frames of the animated video. The second project was a team based and we were given a title and were told to come up with a product. My group was given the topic of music and after doing research we decided to create a 3-D MIDI device that would work with music syn-th software. This involved 3-D printing, Arduino code and soldering.  
+Aside from producing and designing two products we also had to give weekly presentations on our progress during the week. During that Summer I learned more than just how to become a better programmer, but I acquired new skills and further developed my communication skills.  
+I am comfortable working in a team and on my own and I am very confident that during my time interning I will ensure that I produce my best work. I am eager to learn about new and exciting technologies and to further develop my skills. I look forward to working in a team that will challenge and drive me to produce my best work.
+
+\lettersection{Cool Projects?}
+I have also spent some time working on my own side projects. I have written multiple games using Java and OpenGL. I have written tools and plug-ins in python for 3-D software such as Nuke and Maya. My massive interest in Graphics and Animation have also driven me to write my own 3D Renderer in Java with basic lighting, scaling and rotation capabilities. I have started to delve deeper into the areas of UI/UX Design and have played around with React and Google’s Material UI API to create Web Applications such as an Exercise App. I plan to continue to further develop some of these projects as well as developing new ones. 
+
+I am currently available now and am able to work up until the 9th of August.
+\end{cvletter}
+
+
+%-------------------------------------------------------------------------------
+% Print the signature and enclosures with above letter informations
+\makeletterclosing
+
+\end{document}
