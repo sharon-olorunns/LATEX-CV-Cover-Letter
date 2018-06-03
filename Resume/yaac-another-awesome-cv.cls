@@ -8,8 +8,8 @@
   \def\@green{green}
 }
 
-\DeclareOption{red}{
-  \def\@red{red}
+\DeclareOption{blue}{
+  \def\@blue{blue}
 }
 
 \DeclareOption{indigo}{
@@ -57,7 +57,7 @@
 
 \DeclareUnicodeCharacter{00E9}{\'{e}}
 % Define default accent colors
-\definecolor{basecolor}{HTML}{db1a1a}       %BLUE
+\definecolor{basecolor}{HTML}{1376c6}       %BLUE
 
 \ifundef{\@green} {
   \ifundef{\@red} {
@@ -66,15 +66,15 @@
         \ifundef{\@monochrome} {}
         { \definecolor{basecolor}{HTML}{000000}}
       }
-      { \definecolor{basecolor}{HTML}{e68a00} }
+      { \definecolor{basecolor}{HTML}{3294e5} }
     }
-    { \definecolor{basecolor}{rgb}{0.2, 0.07, 0.48} }
+    { \definecolor{basecolor}{rgb}{0.1, 0.07, 0.48} }
   }
-  { \definecolor{basecolor}{HTML}{b30000} }     %RED
+  { \definecolor{basecolor}{HTML}{3294e5} } %RED
 }
 { \definecolor{basecolor}{rgb}{0.0, 0.62, 0.38} }
 
-\definecolor{darkGrey}{HTML}{989898}
+\definecolor{darkGrey}{HTML}{3294e5}
 
 \colorlet{linkcolor}{basecolor}
 \colorlet{accentcolor}{linkcolor!90}
@@ -197,10 +197,6 @@
 % Usage: \linkedin{<linked-in-nick>}
 \newcommand*{\linkedin}[1]{\sociallink{\linkedinSymbol}{http://www.linkedin.com/in/#1/fr}{linkedin.com/in/#1}}
 
-% Render author's viadeo(optional)
-% Usage: \viadeo{<viadeo-nick>}
-\newcommand*{\viadeo}[1]{\sociallink{\viadeoSymbol}{http://www.viadeo.com/fr/profile/#1}{viadeo.com/fr/profile/#1}} 
-
 % Render author's github (optional)
 % Usage: \github{<github-nick>}
 \newcommand*{\github}[1]{\sociallink{\githubSymbol}{https://www.github.com/#1}{github.com/#1}}           % Github icon + URL
@@ -258,7 +254,7 @@
     }{
       \begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}
     }
-    \user{\@firstname}{\@lastname}\\
+    \user{\@firstname}{\@lastname}
     \resumetitle{\@tagline}
     \smallskip\\
     \small{\@socialinfo}
@@ -268,7 +264,6 @@
         \tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
       \end{minipage}
     }{}
-    \bigskip
   }
 }
 
@@ -287,11 +282,9 @@
 % Render a scholarshipentry in the scolarship environment
 % Usage: \scholarshipentry{<date>}{<description>}
 \newcommand\keywordsentry[2]{
-  \textbf{#1} &   #2\\ 
+  \textbf{#1} &   #2 \\ 
 }
 
-% Define a new column type for the scholarship environment
-\newcolumntype{Y}{>{\raggedleft}p{\leftcolumn}}
 
 % Define the 'scholarship' environment
 \newenvironment{scholarship}{%
@@ -303,7 +296,7 @@
 % Render a scholarshipentry in the scolarship environment
 % Usage: \scholarshipentry{<date>}{<description>}
 \newcommand\scholarshipentry[2]{
-  #1    &  #2 \\
+  #1    &  #2 
 }
 
 % Define the 'skills' environment
@@ -341,26 +334,9 @@
   \textbf{#5}    & \begin{minipage}[t]{\rightcolumnlength}
   					         #6
                    \end{minipage}										\\*
-                 & \footnotesize{\foreach \n in {#7}{\cvtag{\n}}} 	\\
+                 & \footnotesize{\foreach \n in {#7}{\cvtag{\n}}} 	
   }
 
-% Render a consultant experience in the experiences environment
-% Usage: 
-% \consultantexperience
-%  {<End date>}      {<Consultant title>}{<Consulting Enterprise>}{<Country>}
-%  {<Start date}     {<Client title>}{<Client business unit>}
-%                    {
-%                      <Experience description (Could be a list)>
-%                    }
-%                    {<Technology list>}
-\newcommand\consultantexperience[9]{
-  \textbf{#1}    & \textbf{#2, \textsc{#3}, #4}   								\\*
-  \textbf{#5}    & \emph{#6} pour \textsc{#7}                       				\\*
-  				       & 	\begin{minipage}[t]{\rightcolumnlength}
-  						        #8
-                   	\end{minipage}										\\*
-                 & \footnotesize{\foreach \n in {#9}{\cvtag{\n}}} 	\\
-  }
 
 \newcommand\emptySeparator{\multicolumn{2}{c}{}\\}
 
@@ -374,22 +350,4 @@
   \end{minipage}
   }
 
-% Define the 'referencees' environment
-\newenvironment{referees}{%
-}{%
-  \hfill
-  \bigskip
-}
-
-\newcommand*\referee[5]{
-  \hspace{1em}
-  \begin{minipage}[t]{\dimexpr(\linewidth/3) - 3em}
-    \begin{tabular}{>{}l >{}l}
-      \multicolumn{2}{l}{\textbf{#1}}\\
-      \multicolumn{2}{l}{\emph{#2}, \textsc{#3}}\\
-      \quad \mailSymbol & \href{mailto:#4}{#4} \\  
-      \quad \faPhone & #5 \\
-    \end{tabular}
-  \end{minipage}%
-}
 

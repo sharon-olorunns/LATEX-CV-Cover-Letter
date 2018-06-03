@@ -275,7 +275,7 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
 INPUT /usr/share/texlive/texmf-dist/tex/luatex/luaotfload/luaotfload-blacklist.cnf
 INPUT /etc/fonts/fonts.conf
-INPUT /etc/fonts/conf.d/10-hinting.conf
+INPUT /etc/fonts/conf.d/65-fonts-ipaexfont-mincho.conf
 OUTPUT /home/wl/.texlive2016/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.lua
 OUTPUT /home/wl/.texlive2016/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc
 OUTPUT /home/wl/.texlive2016/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.lua
